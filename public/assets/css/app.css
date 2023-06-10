@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    --background-light: #EEEDF9;
+    --background-white: #F6F5FF;
+    --text-dark: #0A0040;
+    --color-primary: #6143ff;
+    --color-primary-hover: #5544ED;
+    --color-secondary: #9E9DAA; 
+}
+
+body {
+    background: var(--background-white);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;    
+    display: flex;
+}
+
+.sidebar {
+    width: 100px;   
+    display: flex;
+    justify-content: center;  
+    align-items: start; 
+    padding: 1rem 0;
+    background-color: var(--color-primary);
+}
+
+.sidebar img {
+    width: 60px;
+}
+
+.content {
+    width: calc(100vw - 100px);            
+}
+
+.content nav {
+    width: 100%;
+    height: 100px;
+    padding: 0 1rem; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--background-light);
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    transtion: all .3s ease-in-out;
+}
+
+.btn-primary:hover {    
+    background-color: var(--color-primary-hover);
+}
+
+.container main {
+    display: flex;
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.2rem;
+}
+
+.container main .graphic-container {
+    width: 35%;        
+}
+
+.title-graphic {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-graphic h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    display: inline-block;
+}
+
+.title-graphic hr {
+    display: inline-block;
+    color: var(--color-secondary);
+    width: 100px;
+}
+
+.title-graphic .date {
+    display: flex;
+    gap: 10px;
+    font-size: .9rem;
+    align-items: center;
+}
+
+.title-graphic .date > span {
+    padding: 2px 5px;
+    cursor: pointer;
+    color: var(--color-primary);
+    border-radius: 4px;
+    border: 1px solid var(--background-light);
+}
+
+.title-graphic .date > h4 {
+    color: var(--color-secondary);
+    font-weight: normal;
+}
+
+.tasks-count p {
+    font-size: .9rem;
+    color: var(--color-secondary);
+}
+
+.tasks-count p span {
+    color: var(--color-primary);
+}
+
+.grafic {
+    width: 100%;  
+    display: flex; 
+    padding: 2rem 0; 
+    justify-content: center;
+}
+
+.grafic .graphic-base {
+    width: 300px;
+    height: 300px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
+.grafic .graphic-base span:nth-child(1) {
+    font-size: 3rem;
+}
+
+.remaining-tasks {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.remaining-tasks span {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    border-radius: 50%;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #CCC;
+}
+
+.remaining-tasks p {
+    color: var(--color-secondary);
+}
+
+.remaining-tasks .icon{
+    color: var(--color-primary);
+}
+
+.tasks {
+    width: 65%;        
+}
+
+.tasks select {    
+    font-weight: 600;
+    border: none;  
+    background-color: transparent;  
+    color: var(--color-primary);
+    outline: none;
+}
+
+.task-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    margin: 1rem 0;  
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--background-light);
+}
+
+.task:hover {
+    border-radius: 4px;
+    background-color: var(--background-light);
+}
+
+.task .task-title {
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.task .task-desc {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--color-secondary);
+}
+
+.task .task-desc span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+}
+
+.task .task-actions {
+    display: flex;
+    gap: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    color: var(--color-secondary);
+}
+
+.task .task-actions a {
+    cursor: pointer;    
+}
+
+.task .task-actions a:hover {
+    transform: scale(1.2);
+}

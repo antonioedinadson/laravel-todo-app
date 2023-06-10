@@ -1,0 +1,37 @@
+
+
+# ENTIDADES
+
+### USUARIOS
+- UM USUARIO TEM VARIAS TAREFAS
+- UM USUARIO TEM VARIAS CATEGORIAS
+
+### TAREFAS
+- UMA TAREFA TEM UM USUARIO
+- UMA TAREFA TEM UMA CATEGORIA
+
+### CATEGORIAS
+- UMA CATEGORIA TEM VARIAS TAREFAS
+- UMA CATEGORIA TEM UM USUARIO
+
+### MIGRATIONS
+
+`USUARIOS` 
+- PADRÃO LAVAVEL
+
+`TAREFAS` 
+- id
+- titulo
+- descrição
+- categoria_id
+- usuario_id
+- create_at
+- update_at
+
+`CATEGORIAS`
+- id
+- name
+- cor
+- usuario_id
+
+
