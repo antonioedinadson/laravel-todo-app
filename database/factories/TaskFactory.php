@@ -20,15 +20,18 @@ class TaskFactory extends Factory
     {
         $user = User::all()->random();
 
-        while(count($user->category) == 0) {
+        while (count($user->category) == 0)
+        {
             $user = User::all()->random();
         }
 
         return [
             'title' => fake()->name(),
             'description' => fake()->text(100),
-            'user_id' =>$user,
+            'user_id' => $user,
+            'due_date' => fake()->date(),
             'category_id' => $user->category->random(),
+            'status' => fake()->boolean()
         ];
     }
 }

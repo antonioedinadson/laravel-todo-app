@@ -1,14 +1,20 @@
 @extends('layouts.home')
-@section('subtitle', '')
+@section('subtitle', 'Home')
+@section('header')
+    <div class="buttons">
+        <x-link href="{{ route('task.create') }}" name="Criar tarefa" />
+        <x-link href="{{ route('auth.logout') }}" name="Sair" />
+    </div>
+@endsection
 @section('content')
     <section class="graphic-container">
         <div class="title-graphic">
             <h1>Progresso do dia</h1>
             <hr />
             <div class="date">
-                <span> <i class="fa-solid fa-chevron-left"></i></span>
-                <h4>13 de DEZ</h4>
-                <span> <i class="fa-solid fa-chevron-right"></i></span>
+                <a href="{{ route('task.home', ['d' => $data['prev']]) }}"> <i class="fa-solid fa-chevron-left"></i></a>
+                <h4>{{ $data['string_date'] }}</h4>
+                <a href="{{ route('task.home', ['d' => $data['next']]) }}"> <i class="fa-solid fa-chevron-right"></i></a>
             </div>
         </div>
         <div class="tasks-count">
@@ -26,38 +32,19 @@
         </div>
     </section>
     <section class="tasks">
-        <select name="" id="">
-            <option value="">Todas as tarefas</option>
+        <select name="type-task" id="type-task">
+            <option value="all">Todas as tarefas</option>
+            <option value="pending">Tarefas pendentes</option>
+            <option value="complete">Todas realizadas</option>
         </select>
         <div class="task-list">
-            @php
-                $data = [
-                    [
-                        'id' => 1,
-                        'done' => true,
-                        'title' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        'desc' => 'lorem tesgdeu fefee',
-                        'category' => 'Category01',
-                    ],
-                    [
-                        'id' => 2,
-                        'done' => false,
-                        'title' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        'desc' => 'lorem tesgdeu fefee',
-                        'category' => 'Category02',
-                    ],
-                    [
-                        'id' => 3,
-                        'done' => true,
-                        'title' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        'desc' => 'lorem tesgdeu fefee',
-                        'category' => 'Category03',
-                    ],
-                ];
-            @endphp
-            <x-task :data=$data[0] />
-            <x-task :data=$data[1] />
-            <x-task :data=$data[2] />
+            @foreach ($tasks as $task)
+                <x-task :data=$task />
+            @endforeach
         </div>
     </section>
 @endsection
+
+<script>
+    const select = document.querySelector("#task-type");
+</script>

@@ -14,20 +14,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="{{ asset('/assets/img/logo.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/auth.css') }}">
     <title>Todo | @yield('subtitle')</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <a href=" {{ route('task.home') }}">
-                <img src="{{ asset('/assets/img/logo.png') }}" alt="">
-            </a>
-        </div>
+    <div class="container auth">
         <div class="content">
-            <header>
-                @yield('header')
-            </header>
             <main>
                 @yield('content')
             </main>

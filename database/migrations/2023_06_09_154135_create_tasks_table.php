@@ -15,12 +15,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table)
+        {
             $table->id();
-            $table->foreignIdFor(User::class)->references('id')->on('users')->onDelete('CASCADE');            
-            $table->foreignIdFor(Category::class)->references('id')->on('categories')->onDelete('CASCADE');      
+            $table->foreignIdFor(User::class)->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreignIdFor(Category::class)->references('id')->on('categories')->onDelete('CASCADE');
             $table->string('title')->nullable(false);
+            $table->dateTime('due_date')->nullable(false);
             $table->string('description')->nullable(false);
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }
@@ -32,7 +35,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('tasks', function(Blueprint $table) {
+        Schema::table('tasks', function (Blueprint $table)
+        {
             $table->dropForeignIdFor(User::class);
             $table->dropForeignIdFor(Category::class);
         });

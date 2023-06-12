@@ -1,1 +1,4 @@
-<a href={{ $href }} class="btn btn-primary">{{ $name }}</a>
+@props(['class', 'name'])
+<div class="button-component">
+    <button class="btn {{ $class ?? 'btn-primary' }}">{{ $name }}</button>
+</div>
