@@ -7,8 +7,7 @@
         </form>
         <span>{{ $data['title'] }}</span>
     </div>
-    <div class="task-desc">
-        <span></span>
+    <div class="task-desc">        
         <p>{{ $data['category']->name ?? 'N/A' }}</p>
     </div>
     <div class="task-actions">

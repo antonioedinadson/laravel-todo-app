@@ -25,21 +25,8 @@ body {
     display: flex;
 }
 
-.sidebar {
-    width: 100px;   
-    display: flex;
-    justify-content: center;  
-    align-items: start; 
-    padding: 1rem 0;
-    background-color: var(--color-primary);
-}
-
-.sidebar img {
-    width: 60px;
-}
-
 .content {
-    width: calc(100vw - 100px);            
+    width: 100vw;            
 }
 
 .content header {
@@ -131,65 +118,8 @@ body {
     font-weight: normal;
 }
 
-.tasks-count p {
-    font-size: .9rem;
-    color: var(--color-secondary);
-}
-
-.tasks-count p span {
-    color: var(--color-primary);
-}
-
-.grafic {
-    width: 100%;  
-    display: flex; 
-    padding: 2rem 0; 
-    justify-content: center;
-}
-
-.grafic .graphic-base {
-    width: 300px;
-    height: 300px;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;    
-    justify-content: center;
-    color: var(--color-primary);
-    background-color: var(--color-secondary);
-}
-
-.grafic .graphic-base span:nth-child(1) {
-    font-size: 3rem;
-}
-
-.remaining-tasks {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-}
-
-.remaining-tasks span {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    border-radius: 50%;
-    padding: 2px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #CCC;
-}
-
-.remaining-tasks p {
-    color: var(--color-secondary);
-}
-
-.remaining-tasks .icon{
-    color: var(--color-primary);
-}
-
 .tasks {
-    width: 65%;        
+    width: 100%;        
 }
 
 .tasks select {    

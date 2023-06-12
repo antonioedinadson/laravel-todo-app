@@ -18,12 +18,7 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <a href=" {{ route('task.home') }}">
-                <img src="{{ asset('/assets/img/logo.png') }}" alt="">
-            </a>
-        </div>
+    <div class="container">       
         <div class="content">
             <header>
                 @yield('header')
